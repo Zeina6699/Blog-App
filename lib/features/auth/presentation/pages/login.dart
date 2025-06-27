@@ -4,16 +4,15 @@ import 'package:blog_app/features/auth/presentation/widgets/custom_text_form_fie
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({super.key});
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  State<SignUp> createState() => _SignUpState();
+  State<Login> createState() => _LoginState();
 }
 
-class _SignUpState extends State<SignUp> {
+class _LoginState extends State<Login> {
   final formkey=GlobalKey<FormState>();
-  final nameController=TextEditingController();
   final emailController=TextEditingController();
   final passwordController=TextEditingController();
 
@@ -21,7 +20,6 @@ class _SignUpState extends State<SignUp> {
   void dispose(){
     emailController.dispose();
     passwordController.dispose();
-    nameController.dispose();
     super.dispose();
   }
 
@@ -36,9 +34,8 @@ class _SignUpState extends State<SignUp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            const Text('Sign Up',style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold)),
+            const Text('Login',style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold)),
             const SizedBox(height: 25),
-   CustomTextFormField(hintText: 'Name',controller:nameController),
             const SizedBox(height: 15),
         CustomTextFormField(hintText: 'Email',controller: emailController,),
             const SizedBox(height: 15),
@@ -47,12 +44,11 @@ class _SignUpState extends State<SignUp> {
             const CustomElevatedButton(),
             const SizedBox(height: 15),
            RichText(text:TextSpan(
-              text: "Already have an account ?  ",
+              text: "Don't have an account ?  ",
               style: Theme.of(context).textTheme.titleMedium,
               children: [
                 TextSpan(
-                 
-                text: 'Sign In',
+                text: 'Login',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: MyColor.gradient2,
                   fontWeight: FontWeight.bold
