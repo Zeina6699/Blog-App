@@ -17,6 +17,7 @@ class _SignUpState extends State<SignUp> {
   final emailController=TextEditingController();
   final passwordController=TextEditingController();
 
+ @override
   void dispose(){
     emailController.dispose();
     passwordController.dispose();
